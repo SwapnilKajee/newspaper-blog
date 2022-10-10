@@ -1,0 +1,36 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+<div class="col-9">
+  {% include "blog/partials/post.html" %}
+</div>
+<!-- Recent Posts -->
+<div class="col-3">
+  <h1>Recent Posts</h1>
+  {% for recent_post in recent_posts %}
+    <div class="thumbnail">
+      <img src="{{ recent_post.featured_image.url }}" alt="{{ recent_post.title }}" width="180px">
+      <div class="caption">
+        <h4><a href="">{{ recent_post.title }}</a></h4>
+        <p>{{ recent_post.content | truncatechars:50 }}</p>
+      </div>
+    </div>
+  {% endfor %} 
+  <!-- Recent Posts ends -->
+
+  <!-- Top Posts -->
+  <h1>Top Posts</h1>
+  {% for top_post in top_posts %}
+    <div class="thumbnail">
+      <img src="{{ top_post.featured_image.url }}" alt="{{ top_post.title }}" width="180px">
+      <div class="caption">
+        <h4><a href="">{{ top_post.title }}</a></h4>
+        <p>{{ top_post.content | truncatechars:50 }}</p>
+      </div>
+    </div>
+  {% endfor %}
+  <!-- Top Posts ends -->
+</div>
+
+{% endblock content %}
+

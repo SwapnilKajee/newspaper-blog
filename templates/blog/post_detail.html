@@ -1,0 +1,11 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+<div class="post my-4">
+  {% include "blog/partials/post_action.html" %}
+  <br>
+  {% include "blog/partials/tags.html" %}
+  {% include "blog/partials/featured_image.html" %}
+  <p align="justify">{{ post.content | linebreaks | safe }}</p>
+</div> 
+{% endblock content %}
