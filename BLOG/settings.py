@@ -38,7 +38,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # custom app
     "personal_blog",
+    "api",
+    # 3rd party app
+    "rest_framework",
     "django_summernote",
 ]
 
@@ -137,4 +141,9 @@ SUMMERNOTE_CONFIG = {
      # Change editor size
         'width': '100%',
         'height': '480',
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 5
 }
